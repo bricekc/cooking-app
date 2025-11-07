@@ -1,1 +1,106 @@
-<p>register works!</p>
+<div>
+  <div>
+    <div>
+      <h2>Créer un compte</h2>
+      <p>Créez votre compte pour accéder au quiz</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div>
+          <label>Nom d'utilisateur</label>
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="Choisissez un nom d'utilisateur"
+          />
+        </div>
+
+        @if (
+          registerForm.get("username")?.touched &&
+          registerForm.get("username")?.invalid
+        ) {
+          <div style="color: red">
+            @if (registerForm.get("username")?.errors?.["minlength"]) {
+              <p>
+                Le nom d'utilisateur doit comporter au moins
+                {{
+                  registerForm.get("username")?.errors?.["minlength"]
+                    ?.requiredLength
+                }}
+                caractères.
+              </p>
+            }
+          </div>
+        }
+
+        <div>
+          <label>Mot de passe</label>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Choisissez un mot de passe"
+          />
+        </div>
+
+        @if (
+          registerForm.get("password")?.touched &&
+          registerForm.get("password")?.invalid
+        ) {
+          <div style="color: red">
+            @if (registerForm.get("password")?.errors?.["minlength"]) {
+              <p>
+                Le password doit comporter au moins
+                {{
+                  registerForm.get("password")?.errors?.["minlength"]
+                    ?.requiredLength
+                }}
+                caractères.
+              </p>
+            }
+          </div>
+        }
+
+        <div>
+          <label>Confirmer le mot de passe</label>
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirmez votre mot de passe"
+          />
+        </div>
+      </div>
+
+      @if (
+        registerForm.get("confirmPassword")?.touched &&
+        registerForm.get("confirmPassword")?.invalid
+      ) {
+        <div style="color: red">
+          @if (
+            registerForm.get("confirmPassword")?.errors?.["passwordMismatch"]
+          ) {
+            <p>Les mots de passe ne correspondent pas.</p>
+          }
+        </div>
+      }
+
+      @if (errorMessage()) {
+        <div class="mt-4">
+          <p style="color: red">{{ errorMessage() }}</p>
+        </div>
+      }
+
+      <div>
+        <div>
+          <a routerLink="/login"> Déjà un compte ? Se connecter </a>
+        </div>
+      </div>
+
+      <div>
+        <button [disabled]="isLoading() || !registerForm.valid">
+          {{ isLoading() ? "Création..." : "Créer le compte" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
