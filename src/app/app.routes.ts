@@ -12,23 +12,23 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: '/login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path: '/register',
+    path: 'register',
     component: RegisterComponent
   },
   {
-    path: '/recipes',
+    path: 'recipes',
     component: RecipesComponent
   },
   {
-    path: '/recipe/add',
+    path: 'recipe/add',
     component: RecipeFormComponent
   },
   {
-    path: '/recipe/:id',
+    path: 'recipe/:id',
     component: RecipeDetailsComponent
   }
 ];
