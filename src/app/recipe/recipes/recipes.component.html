@@ -1,1 +1,5 @@
-<p>recipes works!</p>
+<section class="recipes-container">
+  @for (recipe of recipes(); track $index) {
+    <app-recipe-card [recipe]="recipe" />
+  }
+</section>
