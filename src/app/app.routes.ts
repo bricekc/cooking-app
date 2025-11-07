@@ -5,30 +5,34 @@ import { RecipeDetailsComponent } from './recipe/recipe-details/recipe-details.c
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'recipes',
-    component: RecipesComponent
+    component: RecipesComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'recipe/add',
-    component: RecipeFormComponent
+    component: RecipeFormComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'recipe/:id',
-    component: RecipeDetailsComponent
-  }
+    component: RecipeDetailsComponent,
+    canActivate: [authGuard],
+  },
 ];

@@ -1,90 +1,100 @@
 {
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "admin"
-      }
-    ],
-    "categories": [
-      {
-        "id": "1",
-        "category": "japonais"
-      }
-    ],
-    "recipes": [
-      {
-        "id": "1",
-        "categoryId": "1",
-        "name": "Maki Saumon Avocat",
-        "description": "Des rouleaux de sushi classiques au riz vinaigré, garnis de saumon frais et d'avocat, enveloppés dans une feuille d'algue nori.",
-        "ingredients": [
-          {
-            "id": "1",
-            "quantity": "250",
-            "unit": "g"
-          },
-          {
-            "id":"2",
-            "quantity": "150",
-            "unit": "g"
-          },
-          {
-            "id":"3",
-            "quantity": "3",
-            "unit": "feuilles"
-          },
-          {
-            "id":"4",
-            "quantity": "1/2",
-            "unit": "pièce"
-          },
-          {
-            "id":"5",
-            "quantity": "50",
-            "unit": "ml"
-          }
-        ],
-        "steps": [
-          {
-            "order": "1",
-            "description": "Rincer le riz à sushi jusqu'à ce que l'eau soit claire. Le faire cuire (environ 10-15 min) et le laisser reposer (environ 10-15 min) selon les instructions. Assaisonner avec le mélange de vinaigre de riz."
-          },
-          {
-            "order": "2",
-            "description": "Couper le saumon et l'avocat en fines lanières. Placer une demi-feuille de nori sur une natte en bambou. Étaler une fine couche de riz, laisser une bande libre en haut. Disposer la garniture au centre et rouler serré."
-          },
-          {
-            "order": "3",
-            "description": "Couper le rouleau en 6 à 8 morceaux. Servir avec de la sauce soja, du wasabi et du gingembre mariné."
-          }
-        ],
-        "difficulty": "Intermédiaire",
-        "cookTime": "15 min",
-        "prepTime": "45 min",
-        "imageURL": "https://hanzobento.fr/173-large_default/maki-saumon-avocat.jpg"
-      }
-    ],
-    "ingredients": [
-      {
-        "id": "1",
-        "name": "Riz à sushi"
-      },
-      {
-        "id": "2",
-        "name": "Saumon frais (qualité sushi)"
-      },
-      {
-        "id": "3",
-        "name": "Feuilles d'algue Nori"
-      },
-      {
-        "id": "4",
-        "name": "Avocat"
-      },
-      {
-        "id": "5",
-        "name": "Vinaigre de riz pour sushi (mélange sucre/sel)"
-      }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": "rbtktcbsr",
+      "username": "admin2",
+      "password": "admin2"
+    },
+    {
+      "id": "n7i2kha2i",
+      "username": "zserdtfg",
+      "password": "azerty"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "category": "japonais"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "1",
+      "categoryId": "1",
+      "name": "Maki Saumon Avocat",
+      "description": "Des rouleaux de sushi classiques au riz vinaigré, garnis de saumon frais et d'avocat, enveloppés dans une feuille d'algue nori.",
+      "ingredients": [
+        {
+          "id": "1",
+          "quantity": "250",
+          "unit": "g"
+        },
+        {
+          "id": "2",
+          "quantity": "150",
+          "unit": "g"
+        },
+        {
+          "id": "3",
+          "quantity": "3",
+          "unit": "feuilles"
+        },
+        {
+          "id": "4",
+          "quantity": "1/2",
+          "unit": "pièce"
+        },
+        {
+          "id": "5",
+          "quantity": "50",
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        {
+          "order": "1",
+          "description": "Rincer le riz à sushi jusqu'à ce que l'eau soit claire. Le faire cuire (environ 10-15 min) et le laisser reposer (environ 10-15 min) selon les instructions. Assaisonner avec le mélange de vinaigre de riz."
+        },
+        {
+          "order": "2",
+          "description": "Couper le saumon et l'avocat en fines lanières. Placer une demi-feuille de nori sur une natte en bambou. Étaler une fine couche de riz, laisser une bande libre en haut. Disposer la garniture au centre et rouler serré."
+        },
+        {
+          "order": "3",
+          "description": "Couper le rouleau en 6 à 8 morceaux. Servir avec de la sauce soja, du wasabi et du gingembre mariné."
+        }
+      ],
+      "difficulty": "Intermédiaire",
+      "cookTime": "15 min",
+      "prepTime": "45 min",
+      "imageURL": "https://hanzobento.fr/173-large_default/maki-saumon-avocat.jpg"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "1",
+      "name": "Riz à sushi"
+    },
+    {
+      "id": "2",
+      "name": "Saumon frais (qualité sushi)"
+    },
+    {
+      "id": "3",
+      "name": "Feuilles d'algue Nori"
+    },
+    {
+      "id": "4",
+      "name": "Avocat"
+    },
+    {
+      "id": "5",
+      "name": "Vinaigre de riz pour sushi (mélange sucre/sel)"
+    }
+  ]
 }
