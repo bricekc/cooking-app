@@ -20,81 +20,381 @@
     {
       "id": "1",
       "category": "japonais"
+    },
+    {
+      "id": "2",
+      "category": "italien"
+    },
+    {
+      "id": "3",
+      "category": "mexicain"
+    },
+    {
+      "id": "4",
+      "category": "indien"
+    },
+    {
+      "id": "5",
+      "category": "thaïlandais"
     }
   ],
   "recipes": [
     {
       "id": "1",
+      "userId": "1",
       "categoryId": "1",
       "name": "Maki Saumon Avocat",
       "description": "Des rouleaux de sushi classiques au riz vinaigré, garnis de saumon frais et d'avocat, enveloppés dans une feuille d'algue nori.",
       "ingredients": [
-        {
-          "id": "1",
-          "quantity": "250",
-          "unit": "g"
-        },
-        {
-          "id": "2",
-          "quantity": "150",
-          "unit": "g"
-        },
-        {
-          "id": "3",
-          "quantity": "3",
-          "unit": "feuilles"
-        },
-        {
-          "id": "4",
-          "quantity": "1/2",
-          "unit": "pièce"
-        },
-        {
-          "id": "5",
-          "quantity": "50",
-          "unit": "ml"
-        }
+        { "id": "1", "quantity": "250", "unit": "g" },
+        { "id": "2", "quantity": "150", "unit": "g" },
+        { "id": "3", "quantity": "3", "unit": "feuilles" },
+        { "id": "4", "quantity": "1/2", "unit": "pièce" },
+        { "id": "5", "quantity": "50", "unit": "ml" }
       ],
       "steps": [
         {
-          "order": "1",
+          "order": 1,
           "description": "Rincer le riz à sushi jusqu'à ce que l'eau soit claire. Le faire cuire (environ 10-15 min) et le laisser reposer (environ 10-15 min) selon les instructions. Assaisonner avec le mélange de vinaigre de riz."
         },
         {
-          "order": "2",
+          "order": 2,
           "description": "Couper le saumon et l'avocat en fines lanières. Placer une demi-feuille de nori sur une natte en bambou. Étaler une fine couche de riz, laisser une bande libre en haut. Disposer la garniture au centre et rouler serré."
         },
         {
-          "order": "3",
+          "order": 3,
           "description": "Couper le rouleau en 6 à 8 morceaux. Servir avec de la sauce soja, du wasabi et du gingembre mariné."
         }
       ],
       "difficulty": "Intermédiaire",
       "cookTime": "15 min",
       "prepTime": "45 min",
-      "imageURL": "https://hanzobento.fr/173-large_default/maki-saumon-avocat.jpg"
-    }
-  ],
-  "ingredients": [
-    {
-      "id": "1",
-      "name": "Riz à sushi"
+      "imageURL": "https://skysushi.fr/wp-content/uploads/2021/02/maki-saumon-avocat.jpg"
     },
     {
       "id": "2",
-      "name": "Saumon frais (qualité sushi)"
+      "userId": "1",
+      "categoryId": "2",
+      "name": "Spaghetti Carbonara",
+      "description": "Un plat de pâtes romain classique à base d'œufs, de Pecorino Romano, de Guanciale (joue de porc) et de poivre noir.",
+      "ingredients": [
+        { "id": "6", "quantity": "300", "unit": "g" },
+        { "id": "7", "quantity": "150", "unit": "g" },
+        { "id": "8", "quantity": "2", "unit": "unités" },
+        { "id": "9", "quantity": "50", "unit": "g" },
+        { "id": "10", "quantity": "1", "unit": "c. à café" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Couper le Guanciale en dés et le faire revenir dans une poêle sans matière grasse jusqu'à ce qu'il soit croustillant. Retirer de la poêle et conserver la graisse."
+        },
+        {
+          "order": 2,
+          "description": "Mélanger les jaunes d'œufs avec le fromage Pecorino Romano râpé et le poivre noir fraîchement moulu. Ajouter une partie de la graisse du Guanciale."
+        },
+        {
+          "order": 3,
+          "description": "Faire cuire les spaghettis al dente. Égoutter les pâtes, en conservant une louche d'eau de cuisson. Transférer les pâtes dans la poêle avec le Guanciale et mélanger."
+        },
+        {
+          "order": 4,
+          "description": "Hors du feu, incorporer rapidement le mélange d'œufs/fromage et un peu d'eau de cuisson pour créer une sauce crémeuse. Servir immédiatement avec plus de Pecorino et de poivre."
+        }
+      ],
+      "difficulty": "Facile",
+      "cookTime": "10 min",
+      "prepTime": "15 min",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Spaghetti_alla_Carbonara_%28Madrid%29.JPG/330px-Spaghetti_alla_Carbonara_%28Madrid%29.JPG"
     },
     {
       "id": "3",
-      "name": "Feuilles d'algue Nori"
+      "userId": "1",
+      "categoryId": "2",
+      "name": "Pizza Margherita",
+      "description": "La pizza italienne la plus emblématique avec une base de tomates, de la mozzarella fraîche, du basilic et un filet d'huile d'olive.",
+      "ingredients": [
+        { "id": "11", "quantity": "250", "unit": "g" },
+        { "id": "12", "quantity": "100", "unit": "g" },
+        { "id": "13", "quantity": "150", "unit": "g" },
+        { "id": "14", "quantity": "1", "unit": "poignée" },
+        { "id": "15", "quantity": "1", "unit": "filet" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Étaler la pâte à pizza. Couvrir d'une fine couche de sauce tomate."
+        },
+        {
+          "order": 2,
+          "description": "Répartir les morceaux de mozzarella fraîche sur la sauce tomate."
+        },
+        {
+          "order": 3,
+          "description": "Cuire au four préchauffé à la température la plus élevée (environ 250-300°C) pendant 8 à 15 minutes, ou jusqu'à ce que les bords soient dorés."
+        },
+        {
+          "order": 4,
+          "description": "Retirer du four, garnir de feuilles de basilic frais et d'un filet d'huile d'olive. Servir immédiatement."
+        }
+      ],
+      "difficulty": "Facile",
+      "cookTime": "10 min",
+      "prepTime": "15 min",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg"
     },
     {
       "id": "4",
-      "name": "Avocat"
+      "userId": "1",
+      "categoryId": "3",
+      "name": "Guacamole Classique",
+      "description": "Une trempette mexicaine crémeuse et relevée à base d'avocats écrasés, d'oignon, de coriandre, de jus de citron vert et de piment.",
+      "ingredients": [
+        { "id": "16", "quantity": "3", "unit": "pièces" },
+        { "id": "17", "quantity": "1/2", "unit": "pièce" },
+        { "id": "18", "quantity": "1", "unit": "petit" },
+        { "id": "19", "quantity": "1/4", "unit": "tasse" },
+        { "id": "20", "quantity": "1/2", "unit": "pièce" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Écraser les avocats à la fourchette pour obtenir la consistance désirée."
+        },
+        {
+          "order": 2,
+          "description": "Hacher finement l'oignon rouge, la tomate et le piment (si utilisé). Ajouter la coriandre ciselée et le jus de citron vert."
+        },
+        {
+          "order": 3,
+          "description": "Mélanger tous les ingrédients avec l'avocat écrasé. Assaisonner généreusement avec du sel."
+        },
+        {
+          "order": 4,
+          "description": "Servir immédiatement avec des chips de tortilla (totopos)."
+        }
+      ],
+      "difficulty": "Très Facile",
+      "cookTime": "0 min",
+      "prepTime": "10 min",
+      "imageURL": "https://images-ext-1.discordapp.net/external/9aO9xJsrN5Fjd3kxe_h6GFgoZq9WgGTuNw9mjo40bRo/https/www.foodandwine.com/thmb/PaNa5IByv6syP1U3s3mHuN_BK2c%3D/1500x0/filters%3Ano_upscale%28%29%3Amax_bytes%28150000%29%3Astrip_icc%28%29/guacamole-for-a-crowd-FT-RECIPE0125-624c884187d44062ae4fb86794d0769c.jpeg?format=webp&width=1328&height=897"
     },
     {
       "id": "5",
-      "name": "Vinaigre de riz pour sushi (mélange sucre/sel)"
+      "userId": "1",
+      "categoryId": "4",
+      "name": "Poulet Tikka Masala",
+      "description": "Morceaux de poulet marinés et grillés, mijotés dans une sauce crémeuse et richement épicée à base de tomates.",
+      "ingredients": [
+        { "id": "21", "quantity": "500", "unit": "g" },
+        { "id": "22", "quantity": "150", "unit": "ml" },
+        { "id": "23", "quantity": "1", "unit": "cuillère à soupe" },
+        { "id": "24", "quantity": "100", "unit": "g" },
+        { "id": "25", "quantity": "50", "unit": "ml" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Mariner le poulet coupé en cubes dans le yaourt, le jus de citron, le gingembre et les épices (Tikka Masala, curcuma). Laisser reposer au moins 1h."
+        },
+        { "order": 2, "description": "Griller ou cuire le poulet mariné." },
+        {
+          "order": 3,
+          "description": "Préparer la sauce : faire revenir l'oignon, l'ail et le gingembre, ajouter les épices Masala, les tomates concassées. Laisser mijoter."
+        },
+        {
+          "order": 4,
+          "description": "Ajouter le poulet et la crème à la sauce. Laisser mijoter jusqu'à ce que la sauce épaississe. Servir avec du riz Basmati et du pain Naan."
+        }
+      ],
+      "difficulty": "Intermédiaire",
+      "cookTime": "30 min",
+      "prepTime": "20 min",
+      "imageURL": "https://www.royalchill.com/wp-content/uploads/2019/02/recette-facile-poulet-tikka.jpg"
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "categoryId": "4",
+      "name": "Cheese Naan",
+      "description": "Pain plat indien traditionnel fourré au fromage (Vache qui rit ou mozzarella) et cuit sur plaque ou au four.",
+      "ingredients": [
+        { "id": "26", "quantity": "250", "unit": "g" },
+        { "id": "27", "quantity": "100", "unit": "ml" },
+        { "id": "28", "quantity": "1", "unit": "c. à café" },
+        { "id": "29", "quantity": "100", "unit": "g" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Mélanger la farine, le yaourt nature, l'eau, l'huile, le sel et la levure pour former une pâte souple. Laisser lever 1h."
+        },
+        {
+          "order": 2,
+          "description": "Diviser la pâte en boules. Étaler chaque boule, placer le fromage au centre et refermer la pâte."
+        },
+        {
+          "order": 3,
+          "description": "Étaler délicatement la pâte fourrée pour former un pain plat."
+        },
+        {
+          "order": 4,
+          "description": "Cuire dans une poêle chaude ou sur une tawa jusqu'à ce que des bulles se forment et que le pain soit doré."
+        }
+      ],
+      "difficulty": "Facile",
+      "cookTime": "15 min",
+      "prepTime": "60 min",
+      "imageURL": "https://images-ext-1.discordapp.net/external/c6RNOLstwzrepNR2tItSfBqpKp7VarbNvIpFuf17kXc/https/mrcuisto.com/cdn-cgi/image/fit%3Dcontain%2Cwidth%3D480%2Cformat%3Dauto/assets/images/1737366786796-e5yxmkg5.webp?format=webp"
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "categoryId": "5",
+      "name": "Pad Thaï aux crevettes",
+      "description": "Nouilles de riz sautées, un classique thaïlandais, mélangées avec des crevettes, des œufs, des légumes et une sauce aigre-douce salée au tamarin.",
+      "ingredients": [
+        { "id": "30", "quantity": "200", "unit": "g" },
+        { "id": "31", "quantity": "250", "unit": "g" },
+        { "id": "32", "quantity": "2", "unit": "unités" },
+        { "id": "33", "quantity": "1", "unit": "c. à soupe" },
+        { "id": "34", "quantity": "50", "unit": "ml" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Faire tremper les nouilles de riz selon les instructions. Préparer la sauce Pad Thaï (tamarin, sauce poisson, sucre, vinaigre)."
+        },
+        {
+          "order": 2,
+          "description": "Dans un wok chaud, faire sauter l'ail et les crevettes. Ajouter les œufs brouillés sur le côté."
+        },
+        {
+          "order": 3,
+          "description": "Ajouter les nouilles et la sauce. Mélanger rapidement."
+        },
+        {
+          "order": 4,
+          "description": "Incorporer les germes de soja et la ciboule. Servir avec des cacahuètes concassées et du citron vert."
+        }
+      ],
+      "difficulty": "Intermédiaire",
+      "cookTime": "15 min",
+      "prepTime": "20 min",
+      "imageURL": "https://images-ext-1.discordapp.net/external/JWyf0x_K4Y963zk6s01bDR-3xL3PHO4rf294RgsMscQ/https/keto-mojo.com/wp-content/uploads/2021/07/Shrimp-Pad-Thai.jpg?format=webp"
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "categoryId": "5",
+      "name": "Soupe Tom Kha Gai",
+      "description": "Soupe thaïlandaise onctueuse et parfumée au lait de coco, à la citronnelle, au galanga et au poulet (Gai).",
+      "ingredients": [
+        { "id": "35", "quantity": "400", "unit": "ml" },
+        { "id": "36", "quantity": "150", "unit": "g" },
+        { "id": "37", "quantity": "1", "unit": "pièce" },
+        { "id": "38", "quantity": "1", "unit": "tige" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Faire mijoter le lait de coco avec le bouillon. Ajouter les aromates (citronnelle, galanga, feuilles de kaffir)."
+        },
+        {
+          "order": 2,
+          "description": "Ajouter le poulet coupé en morceaux et laisser cuire."
+        },
+        {
+          "order": 3,
+          "description": "Assaisonner avec la sauce poisson et le jus de citron vert. Ajouter les champignons."
+        },
+        {
+          "order": 4,
+          "description": "Servir garni de coriandre fraîche et de piment frais émincé."
+        }
+      ],
+      "difficulty": "Facile",
+      "cookTime": "25 min",
+      "prepTime": "10 min",
+      "imageURL": "https://odelices.ouest-france.fr/images/recettes/2025/03/soupe-thai-poulet-lait-coco-H1-1200x800.jpg"
+    },
+    {
+      "id": "9",
+      "categoryId": "1",
+      "name": "Ramen Tonkotsu",
+      "description": "Soupe de nouilles japonaise copieuse à base d'un bouillon crémeux au porc (Tonkotsu) et garnie de tranches de rôti de porc Chashu, d'œufs marinés et d'algues Nori.",
+      "ingredients": [
+        { "id": "39", "quantity": "1", "unit": "litre" },
+        { "id": "40", "quantity": "200", "unit": "g" },
+        { "id": "41", "quantity": "1", "unit": "tranche" },
+        { "id": "42", "quantity": "1", "unit": "unité" }
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "description": "Préparer ou réchauffer le bouillon Tonkotsu."
+        },
+        {
+          "order": 2,
+          "description": "Cuire les nouilles Ramen. Cuire les œufs mollets et les mariner."
+        },
+        {
+          "order": 3,
+          "description": "Assembler le bol : mettre les nouilles au fond, verser le bouillon chaud."
+        },
+        {
+          "order": 4,
+          "description": "Garnir avec le rôti de porc Chashu, l'œuf mariné, la ciboule, les algues Nori et un peu d'huile pimentée si désiré."
+        }
+      ],
+      "difficulty": "Difficile",
+      "cookTime": "15 min",
+      "prepTime": "120 min (pour le bouillon et la marinade)",
+      "imageURL": "https://www.foodandwine.com/thmb/0AXGLeY6dYnY8sEXFqxBa8opDrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tonkotsu-Ramen-FT-BLOG1122-8fe6c12d609a4fd4ab246bea3aae140e.jpg"
     }
+  ],
+  "ingredients": [
+    { "id": "1", "name": "Riz à sushi" },
+    { "id": "2", "name": "Saumon frais (qualité sushi)" },
+    { "id": "3", "name": "Feuilles d'algue Nori" },
+    { "id": "4", "name": "Avocat" },
+    { "id": "5", "name": "Vinaigre de riz pour sushi (mélange sucre/sel)" },
+    { "id": "6", "name": "Spaghetti" },
+    { "id": "7", "name": "Guanciale (joue de porc salée)" },
+    { "id": "8", "name": "Jaunes d'œufs" },
+    { "id": "9", "name": "Fromage Pecorino Romano râpé" },
+    { "id": "10", "name": "Poivre noir fraîchement moulu" },
+    { "id": "11", "name": "Pâte à pizza" },
+    { "id": "12", "name": "Sauce tomate (pour pizza)" },
+    { "id": "13", "name": "Mozzarella fraîche" },
+    { "id": "14", "name": "Feuilles de basilic frais" },
+    { "id": "15", "name": "Huile d'olive extra vierge" },
+    { "id": "16", "name": "Avocats mûrs" },
+    { "id": "17", "name": "Oignon rouge" },
+    { "id": "18", "name": "Tomate (petite)" },
+    { "id": "19", "name": "Coriandre fraîche" },
+    { "id": "20", "name": "Citron vert (jus)" },
+    { "id": "21", "name": "Blanc de poulet" },
+    { "id": "22", "name": "Yaourt nature / Yaourt grec" },
+    { "id": "23", "name": "Pâte de Curry Tikka Masala" },
+    { "id": "24", "name": "Tomates concassées" },
+    { "id": "25", "name": "Crème fraîche ou crème de coco" },
+    { "id": "26", "name": "Farine (pour Naan)" },
+    { "id": "27", "name": "Lait ou eau tiède" },
+    { "id": "28", "name": "Levure de boulanger" },
+    { "id": "29", "name": "Fromage (type Vache qui rit ou mozzarella)" },
+    { "id": "30", "name": "Nouilles de riz (pour Pad Thaï)" },
+    { "id": "31", "name": "Crevettes décortiquées" },
+    { "id": "32", "name": "Œufs" },
+    { "id": "33", "name": "Concentré de Tamarin" },
+    { "id": "34", "name": "Sauce poisson (Nuoc Mâm)" },
+    { "id": "35", "name": "Lait de coco" },
+    { "id": "36", "name": "Bouillon de poulet" },
+    { "id": "37", "name": "Galanga ou Gingembre" },
+    { "id": "38", "name": "Citronnelle" },
+    { "id": "39", "name": "Bouillon Tonkotsu (porc)" },
+    { "id": "40", "name": "Nouilles Ramen" },
+    { "id": "41", "name": "Rôti de porc Chashu" },
+    { "id": "42", "name": "Œuf mariné Aji Tamago" }
   ]
 }
