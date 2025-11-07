@@ -1,0 +1,96 @@
+.container {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(to bottom, #fff9f3, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  margin: 0;
+}
+
+.login-container {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 350px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-header h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.login-header p {
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #f9f9f9;
+}
+
+.form-input:focus {
+  border-color: #ff7300;
+  outline: none;
+  background-color: #fff;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: -0.5rem;
+}
+
+.btn-submit {
+  margin-top: 1.5rem;
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #e96400;
+}
+
+.btn-submit:disabled {
+  background-color: #ffb380;
+  cursor: not-allowed;
+}
+
+.register-link {
+  margin-top: 1rem;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #ff7300;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
