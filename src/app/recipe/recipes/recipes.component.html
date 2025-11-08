@@ -1,5 +1,47 @@
-<section class="recipes-container">
-  @for (recipe of recipes(); track $index) {
-    <app-recipe-card [recipe]="recipe" />
-  }
-</section>
+<div class="recipes-page">
+  <header class="recipes-header">
+    <div>
+      <h2 class="recipes-title">Toutes les Recettes</h2>
+      <p class="recipes-count">
+        {{ filtered_recipes().length }} recette{{
+          filtered_recipes().length > 1 ? "s" : ""
+        }}
+        trouvée{{ filtered_recipes().length > 1 ? "s" : "" }}
+      </p>
+    </div>
+    <button class="add-recipe-btn">+ Ajouter une Recette</button>
+  </header>
+
+  <section class="filters">
+    <input
+      type="text"
+      placeholder="Rechercher une recette..."
+      [(ngModel)]="recipe_research"
+      class="search-input"
+    />
+    <select
+      name="categories"
+      [(ngModel)]="category_research"
+      class="category-select"
+    >
+      <option value="" disabled selected>Filtrer par catégorie</option>
+      @for (category of categories(); track $index) {
+      <option [value]="category.category">
+        {{ category.category | titlecase }}
+      </option>
+      }
+    </select>
+
+    @if (recipe_research() || category_research()) {
+    <button class="reset-btn" (click)="resetFilters()">
+      Supprimer les filtres
+    </button>
+    }
+  </section>
+
+  <section class="recipes-container">
+    @for (recipe of filtered_recipes(); track $index) {
+    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    }
+  </section>
+</div>

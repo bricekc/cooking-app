@@ -41,10 +41,13 @@ export class RecipeService {
             recipesContent.push(formatedRecipe);
           }
 
-          console.log(recipesContent)
           return recipesContent;
         }
       )
     );
+  }
+
+  getAllCategories() {
+    return this.http.get<Category[]>(`${this.API_URL}/categories`)
   }
 }
