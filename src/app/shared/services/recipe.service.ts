@@ -46,7 +46,9 @@ export class RecipeService {
       ),
     );
   }
-
+  addRecipes(recipe: Recipe): Observable<Recipe> {
+    return this.http.post<Recipe>(`${this.API_URL}/recipes`, recipe);
+  }
   getAllCategories() {
     return this.http.get<Category[]>(`${this.API_URL}/categories`);
   }
