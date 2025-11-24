@@ -21,7 +21,7 @@ export class RecipeService {
         ([recipes, ingredients, categories]: [
           GetRecipe[],
           GetIngredient[],
-          Category[]
+          Category[],
         ]) => {
           const recipesContent: Recipe[] = [];
 
@@ -29,12 +29,12 @@ export class RecipeService {
             const formatedRecipe: Recipe = {
               ...recipe,
               category: categories.filter(
-                (category) => category.id === recipe.categoryId
+                (category) => category.id === recipe.categoryId,
               )[0].category,
               ingredients: recipe.ingredients.map((recipeIngredient) => ({
                 ...recipeIngredient,
                 name: ingredients.filter(
-                  (ingredient) => ingredient.id === recipeIngredient.id
+                  (ingredient) => ingredient.id === recipeIngredient.id,
                 )[0].name,
               })),
             };
@@ -42,12 +42,41 @@ export class RecipeService {
           }
 
           return recipesContent;
-        }
-      )
+        },
+      ),
     );
   }
 
   getAllCategories() {
-    return this.http.get<Category[]>(`${this.API_URL}/categories`)
+    return this.http.get<Category[]>(`${this.API_URL}/categories`);
+  }
+
+  getRecipeById(id: string) {
+    return combineLatest([
+      this.http.get<GetRecipe>(`${this.API_URL}/recipes/${id}`),
+      this.http.get<GetIngredient[]>(`${this.API_URL}/ingredients`),
+      this.http.get<Category[]>(`${this.API_URL}/categories`),
+    ]).pipe(
+      map(([recipe, ingredients, categories]) => {
+        const category =
+          categories.find((c) => c.id === recipe.categoryId)?.category ??
+          'Sans catégorie';
+
+        const formattedIngredients = recipe.ingredients.map((ing) => ({
+          id: ing.id,
+          name:
+            ingredients.find((i) => i.id === ing.id)?.name ||
+            'Ingrédient inconnu',
+          quantity: ing.quantity,
+          unit: ing.unit,
+        }));
+
+        return {
+          ...recipe,
+          category,
+          ingredients: formattedIngredients,
+        };
+      }),
+    );
   }
 }

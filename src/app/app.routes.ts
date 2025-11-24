@@ -22,17 +22,11 @@ export const routes: Routes = [
   },
   {
     path: 'recipes',
-    component: RecipesComponent,
     canActivate: [authGuard],
-  },
-  {
-    path: 'recipe/add',
-    component: RecipeFormComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'recipe/:id',
-    component: RecipeDetailsComponent,
-    canActivate: [authGuard],
+    children: [
+      { path: '', component: RecipesComponent },
+      { path: 'add', component: RecipeFormComponent },
+      { path: ':id', component: RecipeDetailsComponent },
+    ],
   },
 ];

@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RecipeService } from '../../shared/services/recipe.service';
+import { Recipe } from '../../shared/models/recipe';
 
 @Component({
   selector: 'app-recipe-details',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './recipe-details.component.html',
-  styleUrl: './recipe-details.component.css'
+  styleUrl: './recipe-details.component.css',
 })
 export class RecipeDetailsComponent {
+  private route = inject(ActivatedRoute);
+  private recipeService = inject(RecipeService);
+  recipe = signal<Recipe>(null!);
 
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id')!;
+
+    this.recipeService.getRecipeById(id).subscribe((recipe) => {
+      this.recipe.set(recipe);
+    });
+  }
+
+  goBack() {
+    window.history.back();
+  }
 }

@@ -1,1 +1,66 @@
-<p>recipe-details works!</p>
+<div class="page">
+  <div class="container">
+    <button class="back-btn" (click)="goBack()">← Retour</button>
+
+    <div class="hero">
+      <img
+        [src]="
+          recipe().imageURL ||
+          'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'
+        "
+        [alt]="recipe().name"
+      />
+    </div>
+
+    <div class="header">
+      <div class="title-block">
+        <h1>{{ recipe().name }}</h1>
+        <span class="badge">{{ recipe().category }}</span>
+      </div>
+
+      <button class="edit-btn" [routerLink]="['/recipes', recipe().id, 'edit']">
+        ✏️ Modifier la recette
+      </button>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">⏱</div>
+        <div>
+          <p class="label">Temps de préparation</p>
+          <p class="value">{{ recipe().prepTime }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Description</h2>
+      <p>{{ recipe().description }}</p>
+    </div>
+
+    <div class="card">
+      <h2>Ingrédients</h2>
+      <ul class="ingredients">
+        @for (ing of recipe().ingredients; track $index) {
+          <li>
+            <span class="dot"></span>
+            <span class="name">{{ ing.name }}</span>
+            <span class="qty">{{ ing.quantity }} {{ ing.unit }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Instructions</h2>
+      <ol class="steps">
+        @for (step of recipe().steps; track $index) {
+          <li>
+            <span class="step-number">{{ $index + 1 }}</span>
+            <p>{{ step.description }}</p>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</div>
