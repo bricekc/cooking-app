@@ -1,4 +1,5 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../../shared/services/recipe.service';
 import { Category, Recipe } from '../../shared/models/recipe';
 import { RecipeCardComponent } from '../../shared/ui/recipe-card/recipe-card.component';
@@ -13,6 +14,7 @@ import { TitleCasePipe } from '@angular/common';
 })
 export class RecipesComponent implements OnInit {
   private recipeSvc = inject(RecipeService);
+  private route = inject(ActivatedRoute);
   recipes = signal<Recipe[]>([]);
   recipe_research = signal<string>('');
   category_research = signal<string>('');
@@ -37,6 +39,13 @@ export class RecipesComponent implements OnInit {
     });
     this.recipeSvc.getAllCategories().subscribe((categories) => {
       this.categories.set(categories);
+    });
+    
+    // Check for category query param
+    this.route.queryParams.subscribe(params => {
+      if (params['category']) {
+        this.category_research.set(params['category']);
+      }
     });
   }
 

@@ -14,6 +14,16 @@
       "id": "n7i2kha2i",
       "username": "zserdtfg",
       "password": "azerty"
+    },
+    {
+      "id": "dkzd323o7",
+      "username": "fatat",
+      "password": "tarraf"
+    },
+    {
+      "id": "nxgtd5tt1",
+      "username": "corentin",
+      "password": "1234"
     }
   ],
   "categories": [
@@ -46,11 +56,31 @@
       "name": "Maki Saumon Avocat",
       "description": "Des rouleaux de sushi classiques au riz vinaigré, garnis de saumon frais et d'avocat, enveloppés dans une feuille d'algue nori.",
       "ingredients": [
-        { "id": "1", "quantity": "250", "unit": "g" },
-        { "id": "2", "quantity": "150", "unit": "g" },
-        { "id": "3", "quantity": "3", "unit": "feuilles" },
-        { "id": "4", "quantity": "1/2", "unit": "pièce" },
-        { "id": "5", "quantity": "50", "unit": "ml" }
+        {
+          "id": "1",
+          "quantity": "250",
+          "unit": "g"
+        },
+        {
+          "id": "2",
+          "quantity": "150",
+          "unit": "g"
+        },
+        {
+          "id": "3",
+          "quantity": "3",
+          "unit": "feuilles"
+        },
+        {
+          "id": "4",
+          "quantity": "1/2",
+          "unit": "pièce"
+        },
+        {
+          "id": "5",
+          "quantity": "50",
+          "unit": "ml"
+        }
       ],
       "steps": [
         {
@@ -78,11 +108,31 @@
       "name": "Spaghetti Carbonara",
       "description": "Un plat de pâtes romain classique à base d'œufs, de Pecorino Romano, de Guanciale (joue de porc) et de poivre noir.",
       "ingredients": [
-        { "id": "6", "quantity": "300", "unit": "g" },
-        { "id": "7", "quantity": "150", "unit": "g" },
-        { "id": "8", "quantity": "2", "unit": "unités" },
-        { "id": "9", "quantity": "50", "unit": "g" },
-        { "id": "10", "quantity": "1", "unit": "c. à café" }
+        {
+          "id": "6",
+          "quantity": "300",
+          "unit": "g"
+        },
+        {
+          "id": "7",
+          "quantity": "150",
+          "unit": "g"
+        },
+        {
+          "id": "8",
+          "quantity": "2",
+          "unit": "unités"
+        },
+        {
+          "id": "9",
+          "quantity": "50",
+          "unit": "g"
+        },
+        {
+          "id": "10",
+          "quantity": "1",
+          "unit": "c. à café"
+        }
       ],
       "steps": [
         {
@@ -114,11 +164,31 @@
       "name": "Pizza Margherita",
       "description": "La pizza italienne la plus emblématique avec une base de tomates, de la mozzarella fraîche, du basilic et un filet d'huile d'olive.",
       "ingredients": [
-        { "id": "11", "quantity": "250", "unit": "g" },
-        { "id": "12", "quantity": "100", "unit": "g" },
-        { "id": "13", "quantity": "150", "unit": "g" },
-        { "id": "14", "quantity": "1", "unit": "poignée" },
-        { "id": "15", "quantity": "1", "unit": "filet" }
+        {
+          "id": "11",
+          "quantity": "250",
+          "unit": "g"
+        },
+        {
+          "id": "12",
+          "quantity": "100",
+          "unit": "g"
+        },
+        {
+          "id": "13",
+          "quantity": "150",
+          "unit": "g"
+        },
+        {
+          "id": "14",
+          "quantity": "1",
+          "unit": "poignée"
+        },
+        {
+          "id": "15",
+          "quantity": "1",
+          "unit": "filet"
+        }
       ],
       "steps": [
         {
@@ -150,11 +220,31 @@
       "name": "Guacamole Classique",
       "description": "Une trempette mexicaine crémeuse et relevée à base d'avocats écrasés, d'oignon, de coriandre, de jus de citron vert et de piment.",
       "ingredients": [
-        { "id": "16", "quantity": "3", "unit": "pièces" },
-        { "id": "17", "quantity": "1/2", "unit": "pièce" },
-        { "id": "18", "quantity": "1", "unit": "petit" },
-        { "id": "19", "quantity": "1/4", "unit": "tasse" },
-        { "id": "20", "quantity": "1/2", "unit": "pièce" }
+        {
+          "id": "16",
+          "quantity": "3",
+          "unit": "pièces"
+        },
+        {
+          "id": "17",
+          "quantity": "1/2",
+          "unit": "pièce"
+        },
+        {
+          "id": "18",
+          "quantity": "1",
+          "unit": "petit"
+        },
+        {
+          "id": "19",
+          "quantity": "1/4",
+          "unit": "tasse"
+        },
+        {
+          "id": "20",
+          "quantity": "1/2",
+          "unit": "pièce"
+        }
       ],
       "steps": [
         {
@@ -186,18 +276,41 @@
       "name": "Poulet Tikka Masala",
       "description": "Morceaux de poulet marinés et grillés, mijotés dans une sauce crémeuse et richement épicée à base de tomates.",
       "ingredients": [
-        { "id": "21", "quantity": "500", "unit": "g" },
-        { "id": "22", "quantity": "150", "unit": "ml" },
-        { "id": "23", "quantity": "1", "unit": "cuillère à soupe" },
-        { "id": "24", "quantity": "100", "unit": "g" },
-        { "id": "25", "quantity": "50", "unit": "ml" }
+        {
+          "id": "21",
+          "quantity": "500",
+          "unit": "g"
+        },
+        {
+          "id": "22",
+          "quantity": "150",
+          "unit": "ml"
+        },
+        {
+          "id": "23",
+          "quantity": "1",
+          "unit": "cuillère à soupe"
+        },
+        {
+          "id": "24",
+          "quantity": "100",
+          "unit": "g"
+        },
+        {
+          "id": "25",
+          "quantity": "50",
+          "unit": "ml"
+        }
       ],
       "steps": [
         {
           "order": 1,
           "description": "Mariner le poulet coupé en cubes dans le yaourt, le jus de citron, le gingembre et les épices (Tikka Masala, curcuma). Laisser reposer au moins 1h."
         },
-        { "order": 2, "description": "Griller ou cuire le poulet mariné." },
+        {
+          "order": 2,
+          "description": "Griller ou cuire le poulet mariné."
+        },
         {
           "order": 3,
           "description": "Préparer la sauce : faire revenir l'oignon, l'ail et le gingembre, ajouter les épices Masala, les tomates concassées. Laisser mijoter."
@@ -219,10 +332,26 @@
       "name": "Cheese Naan",
       "description": "Pain plat indien traditionnel fourré au fromage (Vache qui rit ou mozzarella) et cuit sur plaque ou au four.",
       "ingredients": [
-        { "id": "26", "quantity": "250", "unit": "g" },
-        { "id": "27", "quantity": "100", "unit": "ml" },
-        { "id": "28", "quantity": "1", "unit": "c. à café" },
-        { "id": "29", "quantity": "100", "unit": "g" }
+        {
+          "id": "26",
+          "quantity": "250",
+          "unit": "g"
+        },
+        {
+          "id": "27",
+          "quantity": "100",
+          "unit": "ml"
+        },
+        {
+          "id": "28",
+          "quantity": "1",
+          "unit": "c. à café"
+        },
+        {
+          "id": "29",
+          "quantity": "100",
+          "unit": "g"
+        }
       ],
       "steps": [
         {
@@ -254,11 +383,31 @@
       "name": "Pad Thaï aux crevettes",
       "description": "Nouilles de riz sautées, un classique thaïlandais, mélangées avec des crevettes, des œufs, des légumes et une sauce aigre-douce salée au tamarin.",
       "ingredients": [
-        { "id": "30", "quantity": "200", "unit": "g" },
-        { "id": "31", "quantity": "250", "unit": "g" },
-        { "id": "32", "quantity": "2", "unit": "unités" },
-        { "id": "33", "quantity": "1", "unit": "c. à soupe" },
-        { "id": "34", "quantity": "50", "unit": "ml" }
+        {
+          "id": "30",
+          "quantity": "200",
+          "unit": "g"
+        },
+        {
+          "id": "31",
+          "quantity": "250",
+          "unit": "g"
+        },
+        {
+          "id": "32",
+          "quantity": "2",
+          "unit": "unités"
+        },
+        {
+          "id": "33",
+          "quantity": "1",
+          "unit": "c. à soupe"
+        },
+        {
+          "id": "34",
+          "quantity": "50",
+          "unit": "ml"
+        }
       ],
       "steps": [
         {
@@ -290,10 +439,26 @@
       "name": "Soupe Tom Kha Gai",
       "description": "Soupe thaïlandaise onctueuse et parfumée au lait de coco, à la citronnelle, au galanga et au poulet (Gai).",
       "ingredients": [
-        { "id": "35", "quantity": "400", "unit": "ml" },
-        { "id": "36", "quantity": "150", "unit": "g" },
-        { "id": "37", "quantity": "1", "unit": "pièce" },
-        { "id": "38", "quantity": "1", "unit": "tige" }
+        {
+          "id": "35",
+          "quantity": "400",
+          "unit": "ml"
+        },
+        {
+          "id": "36",
+          "quantity": "150",
+          "unit": "g"
+        },
+        {
+          "id": "37",
+          "quantity": "1",
+          "unit": "pièce"
+        },
+        {
+          "id": "38",
+          "quantity": "1",
+          "unit": "tige"
+        }
       ],
       "steps": [
         {
@@ -325,10 +490,26 @@
       "name": "Ramen Tonkotsu",
       "description": "Soupe de nouilles japonaise copieuse à base d'un bouillon crémeux au porc (Tonkotsu) et garnie de tranches de rôti de porc Chashu, d'œufs marinés et d'algues Nori.",
       "ingredients": [
-        { "id": "39", "quantity": "1", "unit": "litre" },
-        { "id": "40", "quantity": "200", "unit": "g" },
-        { "id": "41", "quantity": "1", "unit": "tranche" },
-        { "id": "42", "quantity": "1", "unit": "unité" }
+        {
+          "id": "39",
+          "quantity": "1",
+          "unit": "litre"
+        },
+        {
+          "id": "40",
+          "quantity": "200",
+          "unit": "g"
+        },
+        {
+          "id": "41",
+          "quantity": "1",
+          "unit": "tranche"
+        },
+        {
+          "id": "42",
+          "quantity": "1",
+          "unit": "unité"
+        }
       ],
       "steps": [
         {
@@ -355,47 +536,173 @@
     }
   ],
   "ingredients": [
-    { "id": "1", "name": "Riz à sushi" },
-    { "id": "2", "name": "Saumon frais (qualité sushi)" },
-    { "id": "3", "name": "Feuilles d'algue Nori" },
-    { "id": "4", "name": "Avocat" },
-    { "id": "5", "name": "Vinaigre de riz pour sushi (mélange sucre/sel)" },
-    { "id": "6", "name": "Spaghetti" },
-    { "id": "7", "name": "Guanciale (joue de porc salée)" },
-    { "id": "8", "name": "Jaunes d'œufs" },
-    { "id": "9", "name": "Fromage Pecorino Romano râpé" },
-    { "id": "10", "name": "Poivre noir fraîchement moulu" },
-    { "id": "11", "name": "Pâte à pizza" },
-    { "id": "12", "name": "Sauce tomate (pour pizza)" },
-    { "id": "13", "name": "Mozzarella fraîche" },
-    { "id": "14", "name": "Feuilles de basilic frais" },
-    { "id": "15", "name": "Huile d'olive extra vierge" },
-    { "id": "16", "name": "Avocats mûrs" },
-    { "id": "17", "name": "Oignon rouge" },
-    { "id": "18", "name": "Tomate (petite)" },
-    { "id": "19", "name": "Coriandre fraîche" },
-    { "id": "20", "name": "Citron vert (jus)" },
-    { "id": "21", "name": "Blanc de poulet" },
-    { "id": "22", "name": "Yaourt nature / Yaourt grec" },
-    { "id": "23", "name": "Pâte de Curry Tikka Masala" },
-    { "id": "24", "name": "Tomates concassées" },
-    { "id": "25", "name": "Crème fraîche ou crème de coco" },
-    { "id": "26", "name": "Farine (pour Naan)" },
-    { "id": "27", "name": "Lait ou eau tiède" },
-    { "id": "28", "name": "Levure de boulanger" },
-    { "id": "29", "name": "Fromage (type Vache qui rit ou mozzarella)" },
-    { "id": "30", "name": "Nouilles de riz (pour Pad Thaï)" },
-    { "id": "31", "name": "Crevettes décortiquées" },
-    { "id": "32", "name": "Œufs" },
-    { "id": "33", "name": "Concentré de Tamarin" },
-    { "id": "34", "name": "Sauce poisson (Nuoc Mâm)" },
-    { "id": "35", "name": "Lait de coco" },
-    { "id": "36", "name": "Bouillon de poulet" },
-    { "id": "37", "name": "Galanga ou Gingembre" },
-    { "id": "38", "name": "Citronnelle" },
-    { "id": "39", "name": "Bouillon Tonkotsu (porc)" },
-    { "id": "40", "name": "Nouilles Ramen" },
-    { "id": "41", "name": "Rôti de porc Chashu" },
-    { "id": "42", "name": "Œuf mariné Aji Tamago" }
+    {
+      "id": "1",
+      "name": "Riz à sushi"
+    },
+    {
+      "id": "2",
+      "name": "Saumon frais (qualité sushi)"
+    },
+    {
+      "id": "3",
+      "name": "Feuilles d'algue Nori"
+    },
+    {
+      "id": "4",
+      "name": "Avocat"
+    },
+    {
+      "id": "5",
+      "name": "Vinaigre de riz pour sushi (mélange sucre/sel)"
+    },
+    {
+      "id": "6",
+      "name": "Spaghetti"
+    },
+    {
+      "id": "7",
+      "name": "Guanciale (joue de porc salée)"
+    },
+    {
+      "id": "8",
+      "name": "Jaunes d'œufs"
+    },
+    {
+      "id": "9",
+      "name": "Fromage Pecorino Romano râpé"
+    },
+    {
+      "id": "10",
+      "name": "Poivre noir fraîchement moulu"
+    },
+    {
+      "id": "11",
+      "name": "Pâte à pizza"
+    },
+    {
+      "id": "12",
+      "name": "Sauce tomate (pour pizza)"
+    },
+    {
+      "id": "13",
+      "name": "Mozzarella fraîche"
+    },
+    {
+      "id": "14",
+      "name": "Feuilles de basilic frais"
+    },
+    {
+      "id": "15",
+      "name": "Huile d'olive extra vierge"
+    },
+    {
+      "id": "16",
+      "name": "Avocats mûrs"
+    },
+    {
+      "id": "17",
+      "name": "Oignon rouge"
+    },
+    {
+      "id": "18",
+      "name": "Tomate (petite)"
+    },
+    {
+      "id": "19",
+      "name": "Coriandre fraîche"
+    },
+    {
+      "id": "20",
+      "name": "Citron vert (jus)"
+    },
+    {
+      "id": "21",
+      "name": "Blanc de poulet"
+    },
+    {
+      "id": "22",
+      "name": "Yaourt nature / Yaourt grec"
+    },
+    {
+      "id": "23",
+      "name": "Pâte de Curry Tikka Masala"
+    },
+    {
+      "id": "24",
+      "name": "Tomates concassées"
+    },
+    {
+      "id": "25",
+      "name": "Crème fraîche ou crème de coco"
+    },
+    {
+      "id": "26",
+      "name": "Farine (pour Naan)"
+    },
+    {
+      "id": "27",
+      "name": "Lait ou eau tiède"
+    },
+    {
+      "id": "28",
+      "name": "Levure de boulanger"
+    },
+    {
+      "id": "29",
+      "name": "Fromage (type Vache qui rit ou mozzarella)"
+    },
+    {
+      "id": "30",
+      "name": "Nouilles de riz (pour Pad Thaï)"
+    },
+    {
+      "id": "31",
+      "name": "Crevettes décortiquées"
+    },
+    {
+      "id": "32",
+      "name": "Œufs"
+    },
+    {
+      "id": "33",
+      "name": "Concentré de Tamarin"
+    },
+    {
+      "id": "34",
+      "name": "Sauce poisson (Nuoc Mâm)"
+    },
+    {
+      "id": "35",
+      "name": "Lait de coco"
+    },
+    {
+      "id": "36",
+      "name": "Bouillon de poulet"
+    },
+    {
+      "id": "37",
+      "name": "Galanga ou Gingembre"
+    },
+    {
+      "id": "38",
+      "name": "Citronnelle"
+    },
+    {
+      "id": "39",
+      "name": "Bouillon Tonkotsu (porc)"
+    },
+    {
+      "id": "40",
+      "name": "Nouilles Ramen"
+    },
+    {
+      "id": "41",
+      "name": "Rôti de porc Chashu"
+    },
+    {
+      "id": "42",
+      "name": "Œuf mariné Aji Tamago"
+    }
   ]
 }

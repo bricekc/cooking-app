@@ -1,1 +1,43 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Mes Recettes</h3>
+        <p class="footer-text">
+          Votre plateforme de partage de recettes culinaires. Découvrez, créez et partagez vos meilleures recettes.
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/">Accueil</a></li>
+          <li><a routerLink="/recipes">Recettes</a></li>
+          <li><a routerLink="/login">Connexion</a></li>
+          <li><a routerLink="/register">Inscription</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Catégories</h4>
+        <ul class="footer-links">
+          @for (category of categories(); track category.id) {
+            <li><a (click)="navigateToCategory(category.category)" style="cursor: pointer;">{{ category.category | titlecase }}</a></li>
+          }
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:contact&#64;mesrecettes.com">contact&#64;mesrecettes.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mes Recettes. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
