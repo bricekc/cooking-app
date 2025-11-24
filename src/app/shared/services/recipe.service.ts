@@ -21,7 +21,7 @@ export class RecipeService {
         ([recipes, ingredients, categories]: [
           GetRecipe[],
           GetIngredient[],
-          Category[],
+          Category[]
         ]) => {
           const recipesContent: Recipe[] = [];
 
@@ -29,12 +29,12 @@ export class RecipeService {
             const formatedRecipe: Recipe = {
               ...recipe,
               category: categories.filter(
-                (category) => category.id === recipe.categoryId,
+                (category) => category.id === recipe.categoryId
               )[0].category,
               ingredients: recipe.ingredients.map((recipeIngredient) => ({
                 ...recipeIngredient,
                 name: ingredients.filter(
-                  (ingredient) => ingredient.id === recipeIngredient.id,
+                  (ingredient) => ingredient.id === recipeIngredient.id
                 )[0].name,
               })),
             };
@@ -42,15 +42,28 @@ export class RecipeService {
           }
 
           return recipesContent;
-        },
-      ),
+        }
+      )
     );
   }
-  addRecipes(recipe: Recipe): Observable<Recipe> {
+  addRecipes(recipe: Recipe) {
     return this.http.post<Recipe>(`${this.API_URL}/recipes`, recipe);
+  }
+  updateRecipe(recipe: Recipe) {
+    return this.http.put<Recipe>(
+      `${this.API_URL}/recipes/${recipe.id}`,
+      recipe
+    );
+  }
+  deleteRecipe(id: string) {
+    return this.http.delete(`${this.API_URL}/recipes/${id}`);
   }
   getAllCategories() {
     return this.http.get<Category[]>(`${this.API_URL}/categories`);
+  }
+
+  getAllIngredients() {
+    return this.http.get<GetIngredient[]>(`${this.API_URL}/ingredients`);
   }
 
   getRecipeById(id: string) {
@@ -78,7 +91,7 @@ export class RecipeService {
           category,
           ingredients: formattedIngredients,
         };
-      }),
+      })
     );
   }
 }

@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { RecipeService } from '../../shared/services/recipe.service';
 import { Recipe } from '../../shared/models/recipe';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -12,6 +13,7 @@ import { Recipe } from '../../shared/models/recipe';
 export class RecipeDetailsComponent {
   private route = inject(ActivatedRoute);
   private recipeService = inject(RecipeService);
+  auth = inject(AuthService);
   recipe = signal<Recipe>(null!);
 
   ngOnInit() {

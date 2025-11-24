@@ -5,6 +5,7 @@ import { Category, Recipe } from '../../shared/models/recipe';
 import { RecipeCardComponent } from '../../shared/ui/recipe-card/recipe-card.component';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
@@ -24,14 +25,15 @@ export class RecipesComponent implements OnInit {
         recipe.name.toLowerCase().includes(this.recipe_research())
       )
       .filter((recipe) => {
-        console.log(!!this.category_research())
+        console.log(!!this.category_research());
         if (this.category_research())
           return recipe.category.toLowerCase() === this.category_research();
-        else
-          return true
+        else return true;
       })
   );
   categories = signal<Category[]>([]);
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.recipeSvc.getAllRecipies().subscribe((recipes) => {
@@ -52,5 +54,15 @@ export class RecipesComponent implements OnInit {
   resetFilters() {
     this.recipe_research.set('');
     this.category_research.set('');
+  }
+
+  goToAddRecipe() {
+    this.router.navigate(['/recipes/add']);
+  }
+
+  onRecipeDeleted(id: string) {
+    this.recipeSvc.getAllRecipies().subscribe((recipes) => {
+      this.recipes.set(recipes);
+    });
   }
 }

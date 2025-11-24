@@ -16,7 +16,9 @@
   </div>
 
   <div class="content">
-    <h2 class="form-title">Ajouter une nouvelle recette</h2>
+    <h2 class="form-title">
+      {{ isEditMode ? "Modifier la recette" : "Ajouter une nouvelle recette" }}
+    </h2>
 
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <!-- Informations de base -->
@@ -37,10 +39,11 @@
           <label class="form-label">Catégorie *</label>
           <select class="form-select" formControlName="categoryId">
             <option value="" disabled>-- Choisir une catégorie --</option>
-            <option value="1">Entrée</option>
-            <option value="2">Plat Principal</option>
-            <option value="3">Dessert</option>
-            <option value="4">Boisson</option>
+            <option value="1">japonais</option>
+            <option value="2">italien</option>
+            <option value="3">mexicain</option>
+            <option value="4">indien</option>
+            <option value="5">thaïlandais</option>
           </select>
         </div>
 
@@ -62,6 +65,38 @@
             placeholder="https://example.com/image.jpg"
             formControlName="imageURL"
           />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Difficulté</label>
+          <select class="form-select" formControlName="difficulty">
+            <option value="">-- Sélectionnez la difficulté --</option>
+            <option value="Très Facile">Très Facile</option>
+            <option value="Facile">Facile</option>
+            <option value="Intermédiaire">Intermédiaire</option>
+            <option value="Difficile">Difficile</option>
+          </select>
+        </div>
+
+        <div class="form-group two-columns">
+          <div>
+            <label class="form-label">Temps de préparation</label>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Ex: 15 min, 1h"
+              formControlName="prepTime"
+            />
+          </div>
+          <div>
+            <label class="form-label">Temps de cuisson</label>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Ex: 30 min"
+              formControlName="cookTime"
+            />
+          </div>
         </div>
       </div>
 
@@ -88,12 +123,15 @@
             class="ingredient-row"
           >
             <div [formGroupName]="i" class="ingredient-fields">
-              <input
-                type="text"
-                class="form-input ingredient-name"
-                placeholder="Nom de l'ingrédient"
-                formControlName="id"
-              />
+              <select class="form-select ingredient-name" formControlName="id">
+                <option value="">-- Choisir un ingrédient --</option>
+                <option
+                  *ngFor="let ing of availableIngredients"
+                  [value]="ing.id"
+                >
+                  {{ ing.name }}
+                </option>
+              </select>
               <input
                 type="text"
                 class="form-input ingredient-quantity"
@@ -194,7 +232,9 @@
           class="submit-button"
           [disabled]="!recipeForm.valid"
         >
-          Créer la recette
+          {{
+            isEditMode ? "Enregistrer les modifications" : "Créer la recette"
+          }}
         </button>
       </div>
     </form>

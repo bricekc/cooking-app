@@ -8,7 +8,10 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../shared/services/recipe.service';
+import { AuthService } from '../shared/services/auth.service';
+import { Recipe, GetIngredient } from '../shared/models/recipe';
 
 @Component({
   selector: 'app-recipe-form',
@@ -20,9 +23,84 @@ import { Router } from '@angular/router';
 export class RecipeFormComponent {
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private recipeSvc = inject(RecipeService);
+  private authSvc = inject(AuthService);
+  private route = inject(ActivatedRoute);
+  isEditMode = false;
+  editingId: string | null = null;
+  availableIngredients: GetIngredient[] = [];
   recipeForm: FormGroup;
   constructor() {
     this.recipeForm = this.createForm();
+    this.loadIngredients();
+    this.checkEditMode();
+  }
+
+  private checkEditMode() {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.isEditMode = true;
+      this.editingId = id;
+      this.loadRecipeForEdit(id);
+    }
+  }
+
+  private loadRecipeForEdit(id: string) {
+    this.recipeSvc.getRecipeById(id).subscribe({
+      next: (recipe) => {
+        // Patch basic fields
+        this.recipeForm.patchValue({
+          categoryId: recipe.categoryId,
+          name: recipe.name,
+          description: recipe.description,
+          difficulty: recipe.difficulty,
+          cookTime: recipe.cookTime,
+          prepTime: recipe.prepTime,
+          imageURL: recipe.imageURL,
+        });
+
+        // Patch ingredients
+        const ingFA = this.recipeForm.get('ingredients') as FormArray;
+        while (ingFA.length) {
+          ingFA.removeAt(0);
+        }
+        for (const ing of recipe.ingredients) {
+          ingFA.push(
+            this.fb.group({
+              id: [ing.id, Validators.required],
+              quantity: [ing.quantity, Validators.required],
+              unit: [ing.unit, Validators.required],
+            }),
+          );
+        }
+
+        // Patch steps
+        const stepsFA = this.recipeForm.get('steps') as FormArray;
+        while (stepsFA.length) {
+          stepsFA.removeAt(0);
+        }
+        for (const s of recipe.steps) {
+          stepsFA.push(
+            this.fb.group({
+              order: [s.order],
+              description: [s.description, Validators.required],
+            }),
+          );
+        }
+      },
+      error: (err) => console.error('Impossible de charger la recette à éditer', err),
+    });
+  }
+
+  private loadIngredients() {
+    this.recipeSvc.getAllIngredients().subscribe({
+      next: (list) => {
+        this.availableIngredients = list;
+      },
+      error: (err) => {
+        console.error('Impossible de charger les ingrédients', err);
+      },
+    });
   }
   private createForm(): FormGroup {
     return this.fb.group({
@@ -38,7 +116,6 @@ export class RecipeFormComponent {
     });
   }
 
-  // Helpers to create default ingredient/step groups
   private createIngredient(): FormGroup {
     return this.fb.group({
       id: ['', Validators.required],
@@ -54,7 +131,6 @@ export class RecipeFormComponent {
     });
   }
 
-  // Getters for template access
   get ingredients(): FormArray {
     return this.recipeForm.get('ingredients') as FormArray;
   }
@@ -63,7 +139,6 @@ export class RecipeFormComponent {
     return this.recipeForm.get('steps') as FormArray;
   }
 
-  // Optional helpers to manage arrays from the template
   addIngredient() {
     this.ingredients.push(this.createIngredient());
   }
@@ -94,28 +169,52 @@ export class RecipeFormComponent {
 
   onSubmit() {
     if (this.recipeForm.valid) {
-      console.log(this.recipeForm.value);
-      // Logique pour sauvegarder la recette
+      const val = this.recipeForm.value;
+
+      const currentUser = this.authSvc.currentUser();
+      const userId = currentUser?.id ?? '1';
+
+      const newRecipe: Recipe = {
+        id: this.isEditMode && this.editingId ? this.editingId : this.generateId(),
+        userId,
+        categoryId: val.categoryId,
+        category: '',
+        name: val.name,
+        description: val.description,
+        ingredients: (val.ingredients || []).map((ing: any) => ({
+          id: ing.id,
+          quantity: ing.quantity,
+          unit: ing.unit,
+          name:
+            this.availableIngredients.find((a) => a.id === ing.id)?.name || '',
+        })),
+        steps: (val.steps || []).map((s: any) => ({
+          order: typeof s.order === 'string' ? parseInt(s.order, 10) : s.order,
+          description: s.description,
+        })),
+        difficulty: val.difficulty || '',
+        cookTime: val.cookTime || '',
+        prepTime: val.prepTime || '',
+        imageURL: val.imageURL || '',
+      };
+      const save$ = this.isEditMode && this.editingId
+        ? this.recipeSvc.updateRecipe(newRecipe)
+        : this.recipeSvc.addRecipes(newRecipe);
+
+      save$.subscribe({
+        next: (res) => {
+          console.log('Recette sauvegardée', res);
+          this.router.navigate(['/recipes']);
+        },
+        error: (err) => {
+          console.error('Erreur lors de la sauvegarde de la recette', err);
+          alert('Une erreur est survenue lors de lenregistrement de la recette.');
+        },
+      });
     }
   }
 
-    // Ajoutez cette méthode pour vérifier la validité
-  checkFormValidity() {
-    console.log('Formulaire valide ?', this.recipeForm.valid);
-    console.log('Erreurs du formulaire :', this.recipeForm.errors);
-    console.log('Valeurs du formulaire :', this.recipeForm.value);
-
-    // Vérifiez les ingrédients
-    this.ingredients.controls.forEach((control, index) => {
-      console.log(`Ingrédient ${index} valide ?`, control.valid);
-      console.log(`Erreurs ingrédient ${index} :`, control.errors);
-    });
-
-    // Vérifiez les étapes
-    this.steps.controls.forEach((control, index) => {
-      console.log(`Étape ${index} valide ?`, control.valid);
-      console.log(`Erreurs étape ${index} :`, control.errors);
-    });
+  private generateId(): string {
+    return Math.random().toString(36).substr(2, 9);
   }
-  
 }
