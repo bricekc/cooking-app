@@ -48,7 +48,6 @@ export class RecipeFormComponent {
   private loadRecipeForEdit(id: string) {
     this.recipeSvc.getRecipeById(id).subscribe({
       next: (recipe) => {
-        // Patch basic fields
         this.recipeForm.patchValue({
           categoryId: recipe.categoryId,
           name: recipe.name,
@@ -59,7 +58,6 @@ export class RecipeFormComponent {
           imageURL: recipe.imageURL,
         });
 
-        // Patch ingredients
         const ingFA = this.recipeForm.get('ingredients') as FormArray;
         while (ingFA.length) {
           ingFA.removeAt(0);
@@ -74,7 +72,6 @@ export class RecipeFormComponent {
           );
         }
 
-        // Patch steps
         const stepsFA = this.recipeForm.get('steps') as FormArray;
         while (stepsFA.length) {
           stepsFA.removeAt(0);
@@ -88,7 +85,8 @@ export class RecipeFormComponent {
           );
         }
       },
-      error: (err) => console.error('Impossible de charger la recette à éditer', err),
+      error: (err) =>
+        console.error('Impossible de charger la recette à éditer', err),
     });
   }
 
@@ -175,7 +173,10 @@ export class RecipeFormComponent {
       const userId = currentUser?.id ?? '1';
 
       const newRecipe: Recipe = {
-        id: this.isEditMode && this.editingId ? this.editingId : this.generateId(),
+        id:
+          this.isEditMode && this.editingId
+            ? this.editingId
+            : this.generateId(),
         userId,
         categoryId: val.categoryId,
         category: '',
@@ -197,9 +198,10 @@ export class RecipeFormComponent {
         prepTime: val.prepTime || '',
         imageURL: val.imageURL || '',
       };
-      const save$ = this.isEditMode && this.editingId
-        ? this.recipeSvc.updateRecipe(newRecipe)
-        : this.recipeSvc.addRecipes(newRecipe);
+      const save$ =
+        this.isEditMode && this.editingId
+          ? this.recipeSvc.updateRecipe(newRecipe)
+          : this.recipeSvc.addRecipes(newRecipe);
 
       save$.subscribe({
         next: (res) => {
@@ -208,7 +210,9 @@ export class RecipeFormComponent {
         },
         error: (err) => {
           console.error('Erreur lors de la sauvegarde de la recette', err);
-          alert('Une erreur est survenue lors de lenregistrement de la recette.');
+          alert(
+            'Une erreur est survenue lors de lenregistrement de la recette.',
+          );
         },
       });
     }

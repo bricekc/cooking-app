@@ -1,5 +1,4 @@
 <div class="recipe-form-container">
-  <!-- Header -->
   <div class="header">
     <button type="button" class="back-button" (click)="goBack()">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -21,7 +20,6 @@
     </h2>
 
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-      <!-- Informations de base -->
       <div class="form-section">
         <h3 class="section-title">Informations de base</h3>
 
@@ -100,7 +98,6 @@
         </div>
       </div>
 
-      <!-- Ingrédients -->
       <div class="form-section">
         <div class="section-header">
           <h3 class="section-title">Ingrédients</h3>
@@ -118,62 +115,63 @@
         </div>
 
         <div formArrayName="ingredients">
-          <div
-            *ngFor="let ingredient of ingredients.controls; let i = index"
-            class="ingredient-row"
-          >
-            <div [formGroupName]="i" class="ingredient-fields">
-              <select class="form-select ingredient-name" formControlName="id">
-                <option value="">-- Choisir un ingrédient --</option>
-                <option
-                  *ngFor="let ing of availableIngredients"
-                  [value]="ing.id"
+          @for (ingredient of ingredients.controls; track $index) {
+            <div class="ingredient-row">
+              <div [formGroupName]="$index" class="ingredient-fields">
+                <select
+                  class="form-select ingredient-name"
+                  formControlName="id"
                 >
-                  {{ ing.name }}
-                </option>
-              </select>
-              <input
-                type="text"
-                class="form-input ingredient-quantity"
-                placeholder="Quantité"
-                formControlName="quantity"
-              />
-              <select
-                class="form-select ingredient-unit"
-                formControlName="unit"
-              >
-                <option value="">Unité</option>
-                <option value="g">g (grammes)</option>
-                <option value="kg">kg (kilogrammes)</option>
-                <option value="ml">ml (millilitres)</option>
-                <option value="l">L (litres)</option>
-                <option value="cl">cl (centilitres)</option>
-                <option value="cs">c. à soupe</option>
-                <option value="cc">c. à café</option>
-                <option value="piece">pièce(s)</option>
-                <option value="pincee">pincée(s)</option>
-                <option value="tasse">tasse(s)</option>
-              </select>
-            </div>
-            <button
-              type="button"
-              class="remove-button"
-              (click)="removeIngredient(i)"
-              *ngIf="ingredients.length > 1"
-            >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M6 6L14 14M6 14L14 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  <option value="">-- Choisir un ingrédient --</option>
+                  @for (ing of availableIngredients; track ing.id) {
+                    <option [value]="ing.id">
+                      {{ ing.name }}
+                    </option>
+                  }
+                </select>
+                <input
+                  type="text"
+                  class="form-input ingredient-quantity"
+                  placeholder="Quantité"
+                  formControlName="quantity"
                 />
-              </svg>
-            </button>
-          </div>
+                <select
+                  class="form-select ingredient-unit"
+                  formControlName="unit"
+                >
+                  <option value="">Unité</option>
+                  <option value="g">g (grammes)</option>
+                  <option value="kg">kg (kilogrammes)</option>
+                  <option value="ml">ml (millilitres)</option>
+                  <option value="l">L (litres)</option>
+                  <option value="cl">cl (centilitres)</option>
+                  <option value="cs">c. à soupe</option>
+                  <option value="cc">c. à café</option>
+                  <option value="piece">pièce(s)</option>
+                  <option value="pincee">pincée(s)</option>
+                  <option value="tasse">tasse(s)</option>
+                </select>
+              </div>
+              @if (ingredients.length > 1) {
+                <button
+                  type="button"
+                  class="remove-button"
+                  (click)="removeIngredient($index)"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M6 6L14 14M6 14L14 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              }
+            </div>
+          }
         </div>
       </div>
-      <!-- Étapes -->
       <div class="form-section">
         <div class="section-header">
           <h3 class="section-title">Étapes de préparation</h3>
@@ -191,38 +189,37 @@
         </div>
 
         <div formArrayName="steps">
-          <div
-            *ngFor="let step of steps.controls; let i = index"
-            class="step-row"
-          >
-            <div [formGroupName]="i" class="step-content">
-              <div class="step-number">{{ i + 1 }}</div>
-              <textarea
-                class="form-textarea step-description"
-                placeholder="Décrivez l'étape..."
-                formControlName="description"
-                rows="3"
-              ></textarea>
+          @for (step of steps.controls; track $index) {
+            <div class="step-row">
+              <div [formGroupName]="$index" class="step-content">
+                <div class="step-number">{{ $index + 1 }}</div>
+                <textarea
+                  class="form-textarea step-description"
+                  placeholder="Décrivez l'étape..."
+                  formControlName="description"
+                  rows="3"
+                ></textarea>
+              </div>
+              @if (steps.length > 1) {
+                <button
+                  type="button"
+                  class="remove-button"
+                  (click)="removeStep($index)"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M6 6L14 14M6 14L14 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              }
             </div>
-            <button
-              type="button"
-              class="remove-button"
-              (click)="removeStep(i)"
-              *ngIf="steps.length > 1"
-            >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M6 6L14 14M6 14L14 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </button>
-          </div>
+          }
         </div>
       </div>
-      <!-- Actions -->
       <div class="form-actions">
         <button type="button" class="cancel-button" (click)="goBack()">
           Annuler

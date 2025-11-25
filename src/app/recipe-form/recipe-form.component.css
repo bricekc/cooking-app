@@ -4,7 +4,6 @@
   padding-bottom: 2rem;
 }
 
-/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -37,7 +36,6 @@
   color: #333;
 }
 
-/* Content */
 .content {
   max-width: 1000px;
   margin: 0 auto;
@@ -51,7 +49,6 @@
   color: #000;
 }
 
-/* Form Sections */
 .form-section {
   background-color: white;
   border-radius: 12px;
@@ -74,7 +71,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Form Groups */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -133,7 +129,6 @@
   min-height: 100px;
 }
 
-/* Buttons */
 .add-button {
   display: flex;
   align-items: center;
@@ -171,7 +166,6 @@
   color: #dc2626;
 }
 
-/* Ingredient Row */
 .ingredient-row {
   display: flex;
   gap: 0.75rem;
@@ -199,7 +193,6 @@
 .ingredient-unit {
   flex: 1.2;
 }
-/* Step Row */
 .step-row {
   display: flex;
   gap: 0.75rem;
@@ -236,7 +229,6 @@
   flex: 1;
 }
 
-/* Form Actions */
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -280,7 +272,6 @@
   opacity: 0.6;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .content {
     padding: 1.5rem 1rem;
