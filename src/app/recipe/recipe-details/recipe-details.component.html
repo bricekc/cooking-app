@@ -31,7 +31,14 @@
         <div class="icon">⏱</div>
         <div>
           <p class="label">Temps de préparation</p>
-          <p class="value">{{ recipe().prepTime }}</p>
+          <p class="value">{{ recipe().prepTime | cookingTime }}</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon">🍳</div>
+        <div>
+          <p class="label">Temps de cuisson</p>
+          <p class="value">{{ recipe().cookTime | cookingTime }}</p>
         </div>
       </div>
     </div>
@@ -45,7 +52,7 @@
       <h2>Ingrédients</h2>
       <ul class="ingredients">
         @for (ing of recipe().ingredients; track $index) {
-        <li>
+        <li appHighlightIngredient>
           <span class="dot"></span>
           <span class="name">{{ ing.name }}</span>
           <span class="qty">{{ ing.quantity }} {{ ing.unit }}</span>
