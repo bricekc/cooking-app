@@ -18,9 +18,12 @@
         <span class="badge">{{ recipe().category }}</span>
       </div>
 
+      @if (auth.currentUser()?.id === recipe().userId || auth.currentUser()?.id
+      === '1') {
       <button class="edit-btn" [routerLink]="['/recipes', recipe().id, 'edit']">
         ✏️ Modifier la recette
       </button>
+      }
     </div>
 
     <div class="info-grid">
@@ -42,11 +45,11 @@
       <h2>Ingrédients</h2>
       <ul class="ingredients">
         @for (ing of recipe().ingredients; track $index) {
-          <li>
-            <span class="dot"></span>
-            <span class="name">{{ ing.name }}</span>
-            <span class="qty">{{ ing.quantity }} {{ ing.unit }}</span>
-          </li>
+        <li>
+          <span class="dot"></span>
+          <span class="name">{{ ing.name }}</span>
+          <span class="qty">{{ ing.quantity }} {{ ing.unit }}</span>
+        </li>
         }
       </ul>
     </div>
@@ -55,10 +58,10 @@
       <h2>Instructions</h2>
       <ol class="steps">
         @for (step of recipe().steps; track $index) {
-          <li>
-            <span class="step-number">{{ $index + 1 }}</span>
-            <p>{{ step.description }}</p>
-          </li>
+        <li>
+          <span class="step-number">{{ $index + 1 }}</span>
+          <p>{{ step.description }}</p>
+        </li>
         }
       </ol>
     </div>

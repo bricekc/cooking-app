@@ -9,7 +9,9 @@
         trouvée{{ filtered_recipes().length > 1 ? "s" : "" }}
       </p>
     </div>
-    <button class="add-recipe-btn">+ Ajouter une Recette</button>
+    <button class="add-recipe-btn" (click)="goToAddRecipe()">
+      + Ajouter une Recette
+    </button>
   </header>
 
   <section class="filters">
@@ -41,7 +43,10 @@
 
   <section class="recipes-container">
     @for (recipe of filtered_recipes(); track $index) {
-    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    <app-recipe-card
+      [recipe]="recipe"
+      (deleted)="onRecipeDeleted($event)"
+    ></app-recipe-card>
     }
   </section>
 </div>
