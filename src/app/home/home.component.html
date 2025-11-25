@@ -1,1 +1,51 @@
-<p>home works!</p>
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Bienvenue sur Mes Recettes</h1>
+      <p class="hero-description">
+        Découvrez des centaines de recettes délicieuses pour tous les goûts. Partagez vos propres créations culinaires avec notre communauté !
+      </p>
+    </div>
+    
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=500&fit=crop" alt="Cuisine" />
+    </div>
+
+    <div class="hero-actions">
+      <button routerLink="/recipes" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        Voir Toutes les Recettes
+      </button>
+      <button routerLink="/recipes" class="btn btn-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        Parcourir les Catégories
+      </button>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <h2 class="categories-title">Catégories Populaires</h2>
+    <div class="categories-grid">
+      @for (category of categories(); track category.id) {
+      <div class="category-card" (click)="navigateToCategory(category.category)">
+        <h3 class="category-name">{{ category.category | titlecase }}</h3>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- Help Button -->
+  <button class="help-button" title="Aide">
+    <span>?</span>
+  </button>
+</div>
